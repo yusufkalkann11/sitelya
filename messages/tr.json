@@ -1,0 +1,308 @@
+{
+  "nav": {
+    "services": "Hizmetler",
+    "howItWorks": "Nasıl Çalışır",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "dropdownWhatsapp": "WhatsApp",
+    "dropdownInstagram": "Instagram",
+    "dropdownForm": "İletişim Formu",
+    "faq": "SSS"
+  },
+  "hero": {
+    "badge": "Web Tasarım & Geliştirme",
+    "headline": "İşletmeniz İçin Modern Web Sitesi",
+    "subtext": "Restoranından e-ticarete, kliniğinden ajansına — her işletme için profesyonel internet sitesi.",
+    "cta1": "Hemen Başlayalım",
+    "cta2": "Hizmetleri Gör"
+  },
+  "promises": {
+    "items": [
+      {
+        "icon": "⚡",
+        "title": "Hızlı Teslimat",
+        "description": "7-14 gün içinde siteniz hazır"
+      },
+      {
+        "icon": "📱",
+        "title": "Mobil Uyumlu",
+        "description": "Her cihazda mükemmel görünür"
+      },
+      {
+        "icon": "🔒",
+        "title": "Güvenli & Hızlı",
+        "description": "SSL, CDN ve performans optimizasyonu dahil"
+      },
+      {
+        "icon": "🎯",
+        "title": "SEO Hazır",
+        "description": "Google'da üst sıralarda çıkmak için optimize"
+      }
+    ]
+  },
+  "services": {
+    "title": "Hizmetlerimiz",
+    "subtitle": "Her bütçeye ve ihtiyaca uygun web sitesi paketleri",
+    "items": [
+      {
+        "name": "Başlangıç",
+        "price": "$65",
+        "description": "Küçük işletmeler için mükemmel başlangıç paketi",
+        "features": [
+          "5 sayfalık site",
+          "Mobil uyumlu tasarım",
+          "İletişim formu",
+          "Temel SEO",
+          "1 ay destek"
+        ]
+      },
+      {
+        "name": "Profesyonel",
+        "price": "$80",
+        "description": "Büyüyen işletmeler için kapsamlı çözüm",
+        "features": [
+          "10 sayfa",
+          "Blog sistemi",
+          "Gelişmiş SEO",
+          "Google Analytics",
+          "3 ay destek"
+        ],
+        "popular": true
+      },
+      {
+        "name": "E-Ticaret",
+        "price": "$100",
+        "description": "Online satış yapmak isteyenler için",
+        "features": [
+          "Sınırsız ürün",
+          "Ödeme sistemi",
+          "Stok yönetimi",
+          "Sipariş takibi",
+          "6 ay destek"
+        ]
+      },
+      {
+        "name": "Kurumsal",
+        "price": "$120",
+        "description": "Büyük kurumlar için özel çözümler",
+        "features": [
+          "Özel tasarım",
+          "Çok dilli destek",
+          "API entegrasyonu",
+          "Özel panel",
+          "12 ay destek"
+        ]
+      }
+    ],
+    "popular": "En Popüler",
+    "getStarted": "Başlayalım"
+  },
+  "howItWorks": {
+    "title": "Nasıl Çalışır?",
+    "subtitle": "4 adımda hayalinizdeki web sitesine kavuşun",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Keşif Görüşmesi",
+        "description": "İhtiyaçlarınızı, hedeflerinizi ve beklentilerinizi anlamak için ücretsiz bir görüşme yapıyoruz."
+      },
+      {
+        "number": "02",
+        "title": "Tasarım",
+        "description": "Markanıza özel, modern ve etkileyici bir tasarım hazırlıyoruz. Onayınız olmadan ilerlemiyoruz."
+      },
+      {
+        "number": "03",
+        "title": "Geliştirme",
+        "description": "Onaylanan tasarımı hızlı, güvenli ve SEO uyumlu bir web sitesine dönüştürüyoruz."
+      },
+      {
+        "number": "04",
+        "title": "Teslim",
+        "description": "Web sitenizi yayına alıyor, eğitim veriyor ve destek sürecini başlatıyoruz."
+      }
+    ]
+  },
+  "contact": {
+    "title": "İletişime Geçin",
+    "headline": "Projenizi Hayata Geçirelim",
+    "subtext": "Formu doldurun, 24 saat içinde size dönelim.",
+    "subtitle": "Projenizi hayata geçirmek için hemen başlayalım",
+    "feature1": "7-14 gün içinde teslim",
+    "feature2": "2 yıl teknik garanti",
+    "feature3": "7/24 destek hattı",
+    "name": "Ad Soyad",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "message": "Mesajınız",
+    "send": "Mesaj Gönder",
+    "sending": "Gönderiliyor...",
+    "success": "Mesajınız gönderildi! En kısa sürede size döneceğiz.",
+    "error": "Bir hata oluştu. Lütfen tekrar deneyin veya WhatsApp'tan yazın.",
+    "whatsapp": "WhatsApp'tan Yaz",
+    "kvkkPrefix": "Kişisel verilerimin işlenmesine ilişkin",
+    "kvkkLink": "Gizlilik Politikası",
+    "kvkkSuffix": "'nı okudum ve kabul ediyorum.",
+    "namePlaceholder": "Adınızı girin",
+    "emailPlaceholder": "email@örnek.com",
+    "phonePlaceholder": "+90 555 000 00 00",
+    "messagePlaceholder": "Projeniz hakkında bilgi verin...",
+    "package": "Paket",
+    "packageUndecided": "Henüz karar vermedim",
+    "or": "veya",
+    "whatsappDirect": "WhatsApp’tan hemen yazın"
+  },
+  "footer": {
+    "tagline": "Modern web siteleri ile işletmenizi dijitale taşıyoruz.",
+    "links": "Bağlantılar",
+    "contactTitle": "İletişim",
+    "privacyPolicy": "Gizlilik Politikası",
+    "copyright": "© 2026 Sitelya. Tüm hakları saklıdır."
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "subtitle": "Dijital dünyada fark yaratan tasarımlar",
+    "heroHeadline": "Biz Kimiz?",
+    "heroSubtext": "Sitelya, işletmelerin dijital dünyada güçlü bir varlık oluşturmasına yardımcı olan global bir web tasarım ajansıdır.",
+    "missionTitle": "🎯 Misyonumuz",
+    "missionText": "Her ölçekteki işletmeye profesyonel, hızlı ve uygun fiyatlı web sitesi sunmak.",
+    "visionTitle": "🌍 Vizyonumuz",
+    "visionText": "Türkiye'nin en güvenilir web ajansı olmak ve global pazarda fark yaratmak.",
+    "whyTitle": "Neden Sitelya?",
+    "why": [
+      {
+        "icon": "⚡",
+        "title": "Hızlı Teslimat",
+        "text": "7-14 gün içinde siteniz yayında."
+      },
+      {
+        "icon": "🎨",
+        "title": "Özel Tasarım",
+        "text": "Her site sıfırdan, size özel tasarlanır."
+      },
+      {
+        "icon": "🛡️",
+        "title": "2 Yıl Garanti",
+        "text": "Teknik destek ve güncellemeler dahil."
+      },
+      {
+        "icon": "🌐",
+        "title": "Global Hizmet",
+        "text": "Türkiye ve dünya genelinde hizmet veriyoruz."
+      }
+    ],
+    "processTitle": "Çalışma Sürecimiz",
+    "process": [
+      {
+        "number": "01",
+        "title": "Keşif Görüşmesi",
+        "text": "İhtiyaçlarınızı anlarız."
+      },
+      {
+        "number": "02",
+        "title": "Tasarım",
+        "text": "Size özel arayüz hazırlarız."
+      },
+      {
+        "number": "03",
+        "title": "Geliştirme",
+        "text": "Sitenizi kodlarız."
+      },
+      {
+        "number": "04",
+        "title": "Teslim",
+        "text": "Siteniz yayına girer."
+      }
+    ],
+    "ctaHeadline": "Projenizi Hayata Geçirelim",
+    "ctaButton": "Hemen İletişime Geç",
+    "who": {
+      "title": "Biz Kimiz?",
+      "text": "Sitelya, işletmelerin dijital varlığını güçlendirmek amacıyla kurulmuş bir web tasarım ve geliştirme ajansıdır. Restoranlardan kliniklere, hukuk bürolarından e-ticaret girişimlerine kadar her sektörde profesyonel web siteleri tasarlıyoruz."
+    },
+    "mission": {
+      "title": "Misyonumuz",
+      "text": "Her işletmenin benzersiz bir dijital kimlik hak ettiğine inanıyoruz. Misyonumuz, küçük ve orta ölçekli işletmeleri büyük şirketlerle rekabet edebilecekleri güçlü web platformlarına kavuşturmaktır."
+    },
+    "values": {
+      "title": "Değerlerimiz",
+      "items": [
+        "Kalite odaklı çalışma",
+        "Zamanında teslimat",
+        "Şeffaf iletişim",
+        "Müşteri memnuniyeti",
+        "Sürekli öğrenme ve gelişim"
+      ]
+    }
+  },
+  "sectors": {
+    "title": "Kimler İçin",
+    "subtitle": "Sektörünüze özel çözümler",
+    "text": "Her sektörün ihtiyacı farklı. Sitenizi işinizin nasıl çalıştığına göre kurguluyoruz.",
+    "items": [
+      {
+        "icon": "🍽️",
+        "name": "Restoran & Kafe",
+        "description": "Dijital menü, rezervasyon ve Google Haritalar entegrasyonu."
+      },
+      {
+        "icon": "🩺",
+        "name": "Sağlık & Klinik",
+        "description": "Randevu talebi, hizmet sayfaları ve güven veren tasarım."
+      },
+      {
+        "icon": "🛍️",
+        "name": "E-Ticaret",
+        "description": "Ürün kataloğu, sepet, ödeme ve sipariş takibi."
+      },
+      {
+        "icon": "⚖️",
+        "name": "Hukuk & Danışmanlık",
+        "description": "Uzmanlık alanları, ekip tanıtımı ve kurumsal kimlik."
+      },
+      {
+        "icon": "🎓",
+        "name": "Eğitim & Kurs",
+        "description": "Kurs tanıtımları, kayıt formları ve duyurular."
+      },
+      {
+        "icon": "🏠",
+        "name": "Emlak & İnşaat",
+        "description": "İlan galerisi, proje sayfaları ve hızlı iletişim."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Sıkça Sorulan Sorular",
+    "subtitle": "Aklınızdaki soruların cevapları",
+    "more": "Başka bir sorunuz mu var?",
+    "ask": "WhatsApp’tan sorun",
+    "items": [
+      {
+        "q": "Web sitem ne kadar sürede hazır olur?",
+        "a": "Paketinize ve içeriklerin hazır olmasına bağlı olarak siteniz genellikle 7-14 gün içinde yayına alınır."
+      },
+      {
+        "q": "Sitem mobil cihazlarda düzgün görünecek mi?",
+        "a": "Evet. Tüm paketlerimizde site telefon, tablet ve bilgisayarda kusursuz görünecek şekilde tasarlanır."
+      },
+      {
+        "q": "Tasarımı beğenmezsem ne olur?",
+        "a": "Tasarım aşamasında onayınız olmadan geliştirmeye geçmiyoruz. Geri bildirimlerinize göre düzenleme yapıyoruz."
+      },
+      {
+        "q": "Google’da çıkacak mıyım?",
+        "a": "Tüm paketlerde temel SEO ayarları yapılır. Profesyonel ve üstü paketlerde gelişmiş SEO ve Google Analytics kurulumu da dahildir."
+      },
+      {
+        "q": "Teslimden sonra destek veriyor musunuz?",
+        "a": "Evet. Paketinize göre 1 ile 12 ay arasında destek sunuyoruz. Bu süre içinde teknik sorunlarda yanınızdayız."
+      },
+      {
+        "q": "Hangi paketin bana uygun olduğunu bilmiyorum.",
+        "a": "Sorun değil. Ücretsiz keşif görüşmesinde ihtiyaçlarınızı dinleyip size en uygun paketi birlikte belirliyoruz."
+      }
+    ]
+  },
+  "whatsappFloat": "WhatsApp ile iletişime geçin"
+}

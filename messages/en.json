@@ -1,0 +1,308 @@
+{
+  "nav": {
+    "services": "Services",
+    "howItWorks": "How It Works",
+    "about": "About",
+    "contact": "Contact",
+    "dropdownWhatsapp": "WhatsApp",
+    "dropdownInstagram": "Instagram",
+    "dropdownForm": "Contact Form",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "badge": "Web Design & Development",
+    "headline": "Modern Websites For Your Business",
+    "subtext": "From restaurants to e-commerce, clinics to agencies — professional websites for every business.",
+    "cta1": "Get Started",
+    "cta2": "View Services"
+  },
+  "promises": {
+    "items": [
+      {
+        "icon": "⚡",
+        "title": "Fast Delivery",
+        "description": "Your site ready in 7–14 days"
+      },
+      {
+        "icon": "📱",
+        "title": "Mobile First",
+        "description": "Looks perfect on every device"
+      },
+      {
+        "icon": "🔒",
+        "title": "Secure & Fast",
+        "description": "SSL, CDN and performance optimization included"
+      },
+      {
+        "icon": "🎯",
+        "title": "SEO Ready",
+        "description": "Optimized to rank higher on Google"
+      }
+    ]
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Website packages for every budget and need",
+    "items": [
+      {
+        "name": "Starter",
+        "price": "$65",
+        "description": "The perfect starting package for small businesses",
+        "features": [
+          "5-page website",
+          "Mobile-friendly design",
+          "Contact form",
+          "Basic SEO",
+          "1 month support"
+        ]
+      },
+      {
+        "name": "Professional",
+        "price": "$80",
+        "description": "Comprehensive solution for growing businesses",
+        "features": [
+          "10 pages",
+          "Blog system",
+          "Advanced SEO",
+          "Google Analytics",
+          "3 months support"
+        ],
+        "popular": true
+      },
+      {
+        "name": "E-Commerce",
+        "price": "$100",
+        "description": "For those who want to sell online",
+        "features": [
+          "Unlimited products",
+          "Payment system",
+          "Inventory management",
+          "Order tracking",
+          "6 months support"
+        ]
+      },
+      {
+        "name": "Corporate",
+        "price": "$120",
+        "description": "Custom solutions for large organizations",
+        "features": [
+          "Custom design",
+          "Multilingual support",
+          "API integration",
+          "Custom dashboard",
+          "12 months support"
+        ]
+      }
+    ],
+    "popular": "Most Popular",
+    "getStarted": "Get Started"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Get your dream website in 4 steps",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discovery Call",
+        "description": "We have a free consultation to understand your needs, goals, and expectations."
+      },
+      {
+        "number": "02",
+        "title": "Design",
+        "description": "We create a modern, impactful design tailored to your brand. We won't proceed without your approval."
+      },
+      {
+        "number": "03",
+        "title": "Development",
+        "description": "We transform the approved design into a fast, secure, and SEO-friendly website."
+      },
+      {
+        "number": "04",
+        "title": "Launch",
+        "description": "We publish your website, provide training, and kick off the support process."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "headline": "Let's Build Your Project",
+    "subtext": "Fill the form, we'll get back to you within 24 hours.",
+    "subtitle": "Let's get started bringing your project to life",
+    "feature1": "Delivered in 7-14 days",
+    "feature2": "2-year technical guarantee",
+    "feature3": "24/7 support line",
+    "name": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Your message has been sent! We'll get back to you shortly.",
+    "error": "Something went wrong. Please try again or message us on WhatsApp.",
+    "whatsapp": "Message on WhatsApp",
+    "kvkkPrefix": "I have read and accept the",
+    "kvkkLink": "Privacy Policy",
+    "kvkkSuffix": " regarding the processing of my personal data.",
+    "namePlaceholder": "Enter your name",
+    "emailPlaceholder": "email@example.com",
+    "phonePlaceholder": "+1 555 000 0000",
+    "messagePlaceholder": "Tell us about your project...",
+    "package": "Package",
+    "packageUndecided": "Not decided yet",
+    "or": "or",
+    "whatsappDirect": "Message us on WhatsApp"
+  },
+  "footer": {
+    "tagline": "We take your business digital with modern websites.",
+    "links": "Links",
+    "contactTitle": "Contact",
+    "privacyPolicy": "Privacy Policy",
+    "copyright": "© 2026 Sitelya. All rights reserved."
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Designs that make a difference in the digital world",
+    "heroHeadline": "Who We Are",
+    "heroSubtext": "Sitelya is a global web design agency helping businesses build a strong digital presence.",
+    "missionTitle": "🎯 Our Mission",
+    "missionText": "To provide professional, fast and affordable websites for businesses of all sizes.",
+    "visionTitle": "🌍 Our Vision",
+    "visionText": "To become Turkey's most trusted web agency and make an impact in the global market.",
+    "whyTitle": "Why Sitelya?",
+    "why": [
+      {
+        "icon": "⚡",
+        "title": "Fast Delivery",
+        "text": "Your site goes live in 7-14 days."
+      },
+      {
+        "icon": "🎨",
+        "title": "Custom Design",
+        "text": "Every site is designed from scratch, just for you."
+      },
+      {
+        "icon": "🛡️",
+        "title": "2 Year Guarantee",
+        "text": "Technical support and updates included."
+      },
+      {
+        "icon": "🌐",
+        "title": "Global Service",
+        "text": "We serve clients in Turkey and worldwide."
+      }
+    ],
+    "processTitle": "Our Process",
+    "process": [
+      {
+        "number": "01",
+        "title": "Discovery Call",
+        "text": "We understand your needs."
+      },
+      {
+        "number": "02",
+        "title": "Design",
+        "text": "We create your custom interface."
+      },
+      {
+        "number": "03",
+        "title": "Development",
+        "text": "We build your website."
+      },
+      {
+        "number": "04",
+        "title": "Launch",
+        "text": "Your site goes live."
+      }
+    ],
+    "ctaHeadline": "Let's Build Your Project",
+    "ctaButton": "Get In Touch",
+    "who": {
+      "title": "Who We Are",
+      "text": "Sitelya is a web design and development agency founded to strengthen businesses' digital presence. From restaurants to clinics, law firms to e-commerce ventures — we build professional websites for every industry."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "text": "We believe every business deserves a unique digital identity. Our mission is to equip small and medium-sized businesses with powerful web platforms that allow them to compete with large companies."
+    },
+    "values": {
+      "title": "Our Values",
+      "items": [
+        "Quality-focused work",
+        "On-time delivery",
+        "Transparent communication",
+        "Customer satisfaction",
+        "Continuous learning and development"
+      ]
+    }
+  },
+  "sectors": {
+    "title": "Who We Serve",
+    "subtitle": "Solutions tailored to your industry",
+    "text": "Every industry has different needs. We shape your website around how your business actually works.",
+    "items": [
+      {
+        "icon": "🍽️",
+        "name": "Restaurants & Cafés",
+        "description": "Digital menu, reservations and Google Maps integration."
+      },
+      {
+        "icon": "🩺",
+        "name": "Health & Clinics",
+        "description": "Appointment requests, service pages and a trustworthy design."
+      },
+      {
+        "icon": "🛍️",
+        "name": "E-Commerce",
+        "description": "Product catalog, cart, checkout and order tracking."
+      },
+      {
+        "icon": "⚖️",
+        "name": "Law & Consulting",
+        "description": "Practice areas, team profiles and a corporate identity."
+      },
+      {
+        "icon": "🎓",
+        "name": "Education & Courses",
+        "description": "Course pages, sign-up forms and announcements."
+      },
+      {
+        "icon": "🏠",
+        "name": "Real Estate & Construction",
+        "description": "Listing galleries, project pages and quick contact."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to the questions on your mind",
+    "more": "Have another question?",
+    "ask": "Ask on WhatsApp",
+    "items": [
+      {
+        "q": "How long does it take to build my website?",
+        "a": "Depending on your package and how ready your content is, your site usually goes live within 7-14 days."
+      },
+      {
+        "q": "Will my site look good on mobile?",
+        "a": "Yes. In every package, your site is designed to look great on phones, tablets and desktops."
+      },
+      {
+        "q": "What if I don’t like the design?",
+        "a": "We never move to development without your approval of the design, and we revise it based on your feedback."
+      },
+      {
+        "q": "Will I show up on Google?",
+        "a": "Every package includes basic SEO setup. Professional and higher packages also include advanced SEO and Google Analytics."
+      },
+      {
+        "q": "Do you offer support after launch?",
+        "a": "Yes. Depending on your package, we provide 1 to 12 months of support for any technical issues."
+      },
+      {
+        "q": "I’m not sure which package is right for me.",
+        "a": "No problem. In a free discovery call we listen to your needs and pick the best package together."
+      }
+    ]
+  },
+  "whatsappFloat": "Contact us on WhatsApp"
+}
