@@ -62,9 +62,9 @@ function TrContent() {
 
       <Section title="6. Kişisel Verilerin Aktarılması">
         <p>
-          Kişisel verileriniz; form iletiminde kullanılan Formspree Inc. altyapısı aracılığıyla işlenmekte
-          olup üçüncü kişilerle ticari amaçla paylaşılmamaktadır. Formspree, GDPR uyumlu bir hizmet
-          sağlayıcıdır.
+          İletişim formu aracılığıyla ilettiğiniz veriler, barındırma hizmeti aldığımız Supabase Inc.
+          veritabanı altyapısında saklanmakta ve yalnızca yetkili Sitelya çalışanları tarafından
+          görüntülenebilmektedir. Verileriniz üçüncü kişilerle ticari amaçla paylaşılmamaktadır.
         </p>
       </Section>
 
@@ -150,8 +150,9 @@ function EnContent() {
 
       <Section title="6. Data Sharing">
         <p>
-          Your data is processed via Formspree Inc. infrastructure for form delivery and is not shared
-          with third parties for commercial purposes. Formspree is a GDPR-compliant service provider.
+          Data you submit through the contact form is stored on the database infrastructure of our
+          hosting provider Supabase Inc. and can only be viewed by authorized Sitelya staff. Your data
+          is not shared with third parties for commercial purposes.
         </p>
       </Section>
 

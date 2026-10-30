@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
-import { FORMSPREE_URL, WHATSAPP_URL } from '@/lib/site';
+import { WHATSAPP_URL } from '@/lib/site';
 
 export default function Contact({ defaultPackage = '' }: { defaultPackage?: string }) {
   const t      = useTranslations('contact');
@@ -18,6 +18,7 @@ export default function Contact({ defaultPackage = '' }: { defaultPackage?: stri
     package: packages.some((p) => p.name === defaultPackage) ? defaultPackage : '',
     message: '',
   });
+  const [gotcha, setGotcha] = useState('');
 
   const privacyHref = locale === 'tr' ? `/${locale}/gizlilik` : `/${locale}/privacy`;
 
@@ -26,15 +27,15 @@ export default function Contact({ defaultPackage = '' }: { defaultPackage?: stri
     if (!kvkk) return;
     setStatus('sending');
     try {
-      const res = await fetch(FORMSPREE_URL, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...form,
-          package: form.package || t('packageUndecided'),
-          language: locale,
-          _subject: 'Sitelya - Yeni İletişim Formu',
-          _kvkk: 'accepted',
+          locale,
+          source: window.location.pathname + window.location.search,
+          kvkk: true,
+          _gotcha: gotcha,
         }),
       });
       setStatus(res.ok ? 'sent' : 'error');
@@ -89,7 +90,8 @@ export default function Contact({ defaultPackage = '' }: { defaultPackage?: stri
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
-                <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+                <input type="text" name="_gotcha" value={gotcha} onChange={(e) => setGotcha(e.target.value)}
+                  style={{ display: 'none' }} tabIndex={-1} autoComplete="off" aria-hidden="true" />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-semibold text-white/40 mb-1.5 uppercase tracking-wide">{t('name')}</label>

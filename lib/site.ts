@@ -2,7 +2,6 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://sitelya.ve
 export const WHATSAPP_URL = 'https://wa.me/905075909915';
 export const INSTAGRAM_URL = 'https://www.instagram.com/sitelya.agency/';
 export const EMAIL = 'hello.sitelya@outlook.com';
-export const FORMSPREE_URL = process.env.NEXT_PUBLIC_FORMSPREE_URL || 'https://formspree.io/f/mqejdqjw';
 export const LOCALES = ['tr', 'en'] as const;
 
 type LocalizedPath = string | { tr: string; en: string };
