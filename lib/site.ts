@@ -1,4 +1,4 @@
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://sitelya.vercel.app').replace(/\/$/, '');
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://sitelyaweb.com').replace(/\/$/, '');
 export const WHATSAPP_URL = 'https://wa.me/905075909915';
 export const INSTAGRAM_URL = 'https://www.instagram.com/sitelyaweb/';
 export const EMAIL = 'sitelyaweb@gmail.com';
