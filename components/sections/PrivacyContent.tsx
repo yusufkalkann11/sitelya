@@ -2,8 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useLocale } from 'next-intl';
-
-const EMAIL = 'hello.sitelya@outlook.com';
+import { EMAIL } from '@/lib/site';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
