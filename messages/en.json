@@ -7,14 +7,27 @@
     "dropdownWhatsapp": "WhatsApp",
     "dropdownInstagram": "Instagram",
     "dropdownForm": "Contact Form",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "work": "Concepts"
   },
   "hero": {
     "badge": "Web Design & Development",
     "headline": "Modern Websites For Your Business",
     "subtext": "From restaurants to e-commerce, clinics to agencies — professional websites for every business.",
     "cta1": "Get Started",
-    "cta2": "View Services"
+    "cta2": "View Services",
+    "trustLabel": "In every package",
+    "mock": {
+      "brand": "Your Business",
+      "headline": "Let customers find you here",
+      "sub": "Fast, mobile-friendly and Google-ready.",
+      "cta": "Book Now",
+      "chipMobile": "Mobile friendly",
+      "chipSecure": "Secured with SSL",
+      "chipSeo": "SEO ready",
+      "phoneTitle": "Welcome",
+      "phoneCta": "Call Now"
+    }
   },
   "promises": {
     "items": [
@@ -150,14 +163,23 @@
     "package": "Package",
     "packageUndecided": "Not decided yet",
     "or": "or",
-    "whatsappDirect": "Message us on WhatsApp"
+    "whatsappDirect": "Message us on WhatsApp",
+    "channelsTitle": "Reach us directly",
+    "nextTitle": "What happens next?",
+    "next": [
+      "We review your message and reply within 24 hours.",
+      "A short discovery call to clarify your needs.",
+      "We send a tailored quote and timeline."
+    ]
   },
   "footer": {
     "tagline": "We take your business digital with modern websites.",
     "links": "Links",
     "contactTitle": "Contact",
     "privacyPolicy": "Privacy Policy",
-    "copyright": "© 2026 Sitelya. All rights reserved."
+    "copyright": "© 2026 Sitelya. All rights reserved.",
+    "ctaTitle": "Ready for your new website?",
+    "ctaButton": "Start a Project"
   },
   "about": {
     "title": "About Us",
@@ -304,5 +326,63 @@
       }
     ]
   },
-  "whatsappFloat": "Contact us on WhatsApp"
+  "whatsappFloat": "Contact us on WhatsApp",
+  "showcase": {
+    "title": "What We Build",
+    "subtitle": "Websites shaped around how your business works",
+    "text": "Below are concept designs we prepared for different industries. Your site is designed from scratch around your own brand.",
+    "note": "Concept design",
+    "items": [
+      {
+        "tag": "Restaurant & Café",
+        "title": "Built around menu and bookings",
+        "description": "Digital menu, table reservations and one-tap directions.",
+        "features": [
+          "Digital menu",
+          "Online booking",
+          "Google Maps"
+        ]
+      },
+      {
+        "tag": "Health & Clinic",
+        "title": "Trustworthy and booking-ready",
+        "description": "Service pages, specialist profiles and easy appointment requests.",
+        "features": [
+          "Appointment form",
+          "Service pages",
+          "WhatsApp button"
+        ]
+      },
+      {
+        "tag": "E-Commerce",
+        "title": "Designed to sell",
+        "description": "Product catalogue, cart, secure checkout and order tracking.",
+        "features": [
+          "Product catalogue",
+          "Secure checkout",
+          "Order tracking"
+        ]
+      }
+    ],
+    "mock": {
+      "restaurantBrand": "Your Restaurant",
+      "restaurantHeadline": "Join us tonight",
+      "restaurantCta": "Book a Table",
+      "restaurantMenu": "Menu",
+      "clinicBrand": "Your Clinic",
+      "clinicHeadline": "An expert team for your health",
+      "clinicCta": "Book Visit",
+      "clinicSlot": "Available times",
+      "shopBrand": "Your Store",
+      "shopHeadline": "New season",
+      "shopCta": "Add to Cart",
+      "shopCart": "Cart"
+    }
+  },
+  "cta": {
+    "title": "Let’s build your website together",
+    "text": "In a free discovery call we listen to your needs and pick the package that fits you best.",
+    "primary": "Book a Free Call",
+    "secondary": "Message on WhatsApp"
+  }
 }

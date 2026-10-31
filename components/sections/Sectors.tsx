@@ -2,53 +2,44 @@
 
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import SectionHeading from '../ui/SectionHeading';
 
 export default function Sectors() {
   const t = useTranslations('sectors');
   const items = t.raw('items') as Array<{ icon: string; name: string; description: string }>;
 
   return (
-    <section id="sectors" className="py-28 relative overflow-hidden" style={{ background: '#0a0f1a' }}>
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(37,99,235,0.07) 0%, transparent 70%)' }} />
-      </div>
+    <section id="sectors" className="relative overflow-hidden bg-ink-900 py-24 sm:py-32">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px hairline-t" />
+      <div className="container-site relative">
+        <SectionHeading eyebrow={t('title')} title={t('subtitle')} text={t('text')} />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: '#60a5fa' }}>{t('title')}</p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-4 tracking-tight">{t('subtitle')}</h2>
-          <p className="text-white/50 text-base max-w-xl mx-auto">{t('text')}</p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.06] sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => (
             <motion.div
               key={item.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              whileHover={{ y: -6, transition: { duration: 0.25 } }}
-              className="group relative rounded-2xl p-6 border border-white/[0.07] hover:border-[#2563EB]/40 transition-colors duration-300 overflow-hidden"
-              style={{ background: 'rgba(255,255,255,0.03)' }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.6, delay: i * 0.06 }}
+              className="group relative overflow-hidden bg-ink-900 p-7 transition-colors duration-300 hover:bg-[#0c1428] sm:p-8"
             >
-              <div className="absolute -top-16 -right-16 w-40 h-40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style={{ background: 'radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%)' }} />
-              <div className="relative flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-2xl bg-[#2563EB]/10 border border-[#2563EB]/20">
-                  {item.icon}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                style={{ background: 'radial-gradient(closest-side, rgba(37,99,235,0.22), transparent)' }}
+              />
+              <div className="relative">
+                <div className="flex items-center justify-between">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] text-2xl shadow-inner shadow-white/5">
+                    {item.icon}
+                  </span>
+                  <span className="font-display text-sm font-bold tabular-nums text-white/15 transition-colors duration-300 group-hover:text-brand-light/60">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
                 </div>
-                <div>
-                  <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-[#60a5fa] transition-colors duration-300">{item.name}</h3>
-                  <p className="text-sm text-white/45 leading-relaxed">{item.description}</p>
-                </div>
+                <h3 className="mt-6 font-display text-lg font-bold tracking-tight text-white">{item.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-400">{item.description}</p>
               </div>
             </motion.div>
           ))}

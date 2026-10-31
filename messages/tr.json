@@ -7,14 +7,27 @@
     "dropdownWhatsapp": "WhatsApp",
     "dropdownInstagram": "Instagram",
     "dropdownForm": "İletişim Formu",
-    "faq": "SSS"
+    "faq": "SSS",
+    "work": "Konseptler"
   },
   "hero": {
     "badge": "Web Tasarım & Geliştirme",
     "headline": "İşletmeniz İçin Modern Web Sitesi",
     "subtext": "Restoranından e-ticarete, kliniğinden ajansına — her işletme için profesyonel internet sitesi.",
     "cta1": "Hemen Başlayalım",
-    "cta2": "Hizmetleri Gör"
+    "cta2": "Hizmetleri Gör",
+    "trustLabel": "Her pakette",
+    "mock": {
+      "brand": "İşletmeniz",
+      "headline": "Müşterileriniz sizi burada bulsun",
+      "sub": "Hızlı, mobil uyumlu ve Google dostu.",
+      "cta": "Randevu Al",
+      "chipMobile": "Mobil uyumlu",
+      "chipSecure": "SSL ile güvenli",
+      "chipSeo": "SEO hazır",
+      "phoneTitle": "Hoş geldiniz",
+      "phoneCta": "Hemen Ara"
+    }
   },
   "promises": {
     "items": [
@@ -150,14 +163,23 @@
     "package": "Paket",
     "packageUndecided": "Henüz karar vermedim",
     "or": "veya",
-    "whatsappDirect": "WhatsApp’tan hemen yazın"
+    "whatsappDirect": "WhatsApp’tan hemen yazın",
+    "channelsTitle": "Doğrudan ulaşın",
+    "nextTitle": "Sonra ne olacak?",
+    "next": [
+      "Mesajınızı inceleyip 24 saat içinde dönüş yapıyoruz.",
+      "Kısa bir keşif görüşmesiyle ihtiyaçlarınızı netleştiriyoruz.",
+      "Size özel teklif ve zaman planını iletiyoruz."
+    ]
   },
   "footer": {
     "tagline": "Modern web siteleri ile işletmenizi dijitale taşıyoruz.",
     "links": "Bağlantılar",
     "contactTitle": "İletişim",
     "privacyPolicy": "Gizlilik Politikası",
-    "copyright": "© 2026 Sitelya. Tüm hakları saklıdır."
+    "copyright": "© 2026 Sitelya. Tüm hakları saklıdır.",
+    "ctaTitle": "Yeni sitenize hazır mısınız?",
+    "ctaButton": "Projeye Başla"
   },
   "about": {
     "title": "Hakkımızda",
@@ -304,5 +326,63 @@
       }
     ]
   },
-  "whatsappFloat": "WhatsApp ile iletişime geçin"
+  "whatsappFloat": "WhatsApp ile iletişime geçin",
+  "showcase": {
+    "title": "Neler Kuruyoruz",
+    "subtitle": "İşinize göre kurgulanmış web siteleri",
+    "text": "Aşağıdakiler, farklı sektörler için hazırladığımız konsept tasarımlardır. Sizin siteniz markanıza özel olarak sıfırdan tasarlanır.",
+    "note": "Konsept tasarım",
+    "items": [
+      {
+        "tag": "Restoran & Kafe",
+        "title": "Menü ve rezervasyon odaklı",
+        "description": "Dijital menü, masa rezervasyonu ve tek dokunuşla yol tarifi.",
+        "features": [
+          "Dijital menü",
+          "Online rezervasyon",
+          "Google Haritalar"
+        ]
+      },
+      {
+        "tag": "Sağlık & Klinik",
+        "title": "Güven veren, randevu getiren",
+        "description": "Hizmet sayfaları, uzman tanıtımı ve kolay randevu talebi.",
+        "features": [
+          "Randevu formu",
+          "Hizmet sayfaları",
+          "WhatsApp butonu"
+        ]
+      },
+      {
+        "tag": "E-Ticaret",
+        "title": "Satış için tasarlandı",
+        "description": "Ürün kataloğu, sepet, güvenli ödeme ve sipariş takibi.",
+        "features": [
+          "Ürün kataloğu",
+          "Güvenli ödeme",
+          "Sipariş takibi"
+        ]
+      }
+    ],
+    "mock": {
+      "restaurantBrand": "Restoranınız",
+      "restaurantHeadline": "Bu akşam bize gelin",
+      "restaurantCta": "Masa Ayırt",
+      "restaurantMenu": "Menü",
+      "clinicBrand": "Kliniğiniz",
+      "clinicHeadline": "Sağlığınız için uzman ekip",
+      "clinicCta": "Randevu Al",
+      "clinicSlot": "Uygun saatler",
+      "shopBrand": "Mağazanız",
+      "shopHeadline": "Yeni sezon",
+      "shopCta": "Sepete Ekle",
+      "shopCart": "Sepet"
+    }
+  },
+  "cta": {
+    "title": "Sitenizi birlikte kuralım",
+    "text": "Ücretsiz keşif görüşmesinde ihtiyaçlarınızı dinleyelim, size en uygun paketi birlikte belirleyelim.",
+    "primary": "Ücretsiz Görüşme Planla",
+    "secondary": "WhatsApp’tan Yaz"
+  }
 }

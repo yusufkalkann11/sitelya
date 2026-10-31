@@ -6,6 +6,8 @@ import Sectors from '@/components/sections/Sectors';
 import HowItWorks from '@/components/sections/HowItWorks';
 import FAQ from '@/components/sections/FAQ';
 import Contact from '@/components/sections/Contact';
+import Showcase from '@/components/sections/Showcase';
+import CTABand from '@/components/sections/CTABand';
 
 export default function HomePage() {
   return (
@@ -13,9 +15,11 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
+        <Showcase />
         <Services />
-        <Sectors />
         <HowItWorks />
+        <Sectors />
+        <CTABand />
         <FAQ />
         <Contact />
       </main>

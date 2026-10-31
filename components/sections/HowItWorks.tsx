@@ -1,77 +1,62 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import SectionHeading from '../ui/SectionHeading';
+import { Chat, Code, Palette, Rocket } from '../ui/Icons';
 
-const STEP_ICONS = ['💬', '🎨', '⚙️', '🚀'];
+const STEP_ICONS = [Chat, Palette, Code, Rocket];
 
 export default function HowItWorks() {
   const t = useTranslations('howItWorks');
   const steps = t.raw('steps') as Array<{ number: string; title: string; description: string }>;
 
+  // The timeline line fills up as the user scrolls through the steps
+  const listRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: listRef, offset: ['start 75%', 'end 60%'] });
+  const fill = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+
   return (
-    <section id="how-it-works" className="py-28 bg-[#0a0f1a] relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(37,99,235,0.06) 0%, transparent 70%)' }} />
-      </div>
+    <section id="how-it-works" className="relative overflow-hidden bg-ink py-24 sm:py-32">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid opacity-50 mask-radial" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
-        >
-          <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: '#60a5fa' }}>
-            {t('title')}
-          </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight">{t('subtitle')}</h2>
-        </motion.div>
+      <div className="container-site relative">
+        <SectionHeading eyebrow={t('title')} title={t('subtitle')} />
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Connecting line (desktop) */}
-          <div className="hidden lg:block absolute top-10 left-0 right-0 h-px">
-            <div className="mx-auto max-w-4xl h-full bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
+        <div ref={listRef} className="relative mx-auto mt-16 max-w-xl lg:max-w-none">
+          {/* Track — vertical on mobile, horizontal on desktop */}
+          <div aria-hidden="true" className="absolute bottom-6 left-[1.6875rem] top-6 w-px bg-white/10 lg:hidden">
+            <motion.div style={{ height: fill }} className="w-full bg-gradient-to-b from-brand-light to-brand" />
+          </div>
+          <div aria-hidden="true" className="absolute left-[12.5%] right-[12.5%] top-7 hidden h-px bg-white/10 lg:block">
+            <motion.div style={{ width: fill }} className="h-full bg-gradient-to-r from-brand to-brand-light" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6">
-            {steps.map((step, i) => (
-              <motion.div
+          <ol className="relative grid grid-cols-1 gap-10 lg:grid-cols-4 lg:gap-6">
+          {steps.map((step, i) => {
+            const Icon = STEP_ICONS[i] ?? Chat;
+            return (
+              <motion.li
                 key={step.number}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.55, delay: i * 0.15 }}
-                className="relative flex flex-col items-center text-center group"
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative flex gap-5 lg:flex-col lg:items-center lg:gap-0 lg:text-center"
               >
-                {/* Step number bubble */}
-                <div className="relative z-10 mb-6">
-                  <motion.div
-                    whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
-                    className="w-20 h-20 rounded-2xl flex flex-col items-center justify-center border transition-all duration-300 group-hover:border-[#2563EB]/60"
-                    style={{
-                      background: 'rgba(37,99,235,0.08)',
-                      borderColor: 'rgba(37,99,235,0.2)',
-                    }}
-                  >
-                    <span className="text-2xl mb-0.5">{STEP_ICONS[i]}</span>
-                    <span className="text-xs font-black text-[#60a5fa] tracking-wider">{step.number}</span>
-                  </motion.div>
-                  {/* Connector dot */}
-                  <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 -right-3 w-2 h-2 rounded-full bg-[#2563EB]/40 group-last:hidden" />
+                <div className="relative z-10 flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl border border-brand/30 bg-[#0b1430] text-brand-light shadow-[0_0_0_6px_rgba(6,10,20,1),0_10px_30px_-10px_rgba(37,99,235,0.7)] transition-all duration-300 group-hover:border-brand-light/70 group-hover:text-white">
+                  <Icon className="h-6 w-6" />
                 </div>
-
-                <h3 className="text-lg font-bold text-white mb-3 group-hover:text-[#60a5fa] transition-colors duration-300">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-white/45 leading-relaxed max-w-[200px]">{step.description}</p>
-              </motion.div>
-            ))}
-          </div>
+                <div className="lg:mt-6">
+                  <span className="font-display text-xs font-bold tracking-[0.2em] text-brand-light">{step.number}</span>
+                  <h3 className="mt-1.5 font-display text-xl font-bold tracking-tight text-white">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-400 lg:mx-auto lg:max-w-[15rem]">{step.description}</p>
+                </div>
+              </motion.li>
+            );
+          })}
+          </ol>
         </div>
       </div>
     </section>

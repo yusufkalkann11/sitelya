@@ -192,15 +192,17 @@ export default function PrivacyContent() {
   const isTr = locale === 'tr';
 
   return (
-    <section className="py-24 bg-navy min-h-screen">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative min-h-screen overflow-hidden bg-ink pb-24 pt-16 sm:pt-20">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-[28rem] bg-grid mask-radial" />
+      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+          <span className="eyebrow mb-5">{isTr ? 'KVKK' : 'Privacy'}</span>
+          <h1 className="heading-lg text-balance text-white mb-3">
             {isTr ? 'Gizlilik Politikası ve KVKK Aydınlatma Metni' : 'Privacy Policy'}
           </h1>
           <p className="text-white/50 text-sm">
@@ -212,7 +214,7 @@ export default function PrivacyContent() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="glass rounded-2xl p-8 sm:p-10"
+          className="card p-6 sm:p-10"
         >
           {isTr ? <TrContent /> : <EnContent />}
         </motion.div>

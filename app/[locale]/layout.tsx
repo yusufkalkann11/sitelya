@@ -4,14 +4,16 @@ import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import MotionProvider from '@/components/MotionProvider';
 import { SITE_URL, EMAIL, INSTAGRAM_URL, LOCALES, alternatesFor } from '@/lib/site';
 import '../globals.css';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const inter = Inter({ subsets: ['latin', 'latin-ext'], variable: '--font-inter', display: 'swap' });
 const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['800'],
+  subsets: ['latin', 'latin-ext'],
+  weight: ['600', '700', '800'],
   variable: '--font-jakarta',
+  display: 'swap',
 });
 
 export function generateStaticParams() {
@@ -103,14 +105,16 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${inter.variable} ${jakarta.variable}`}>
-      <body className="font-inter bg-navy text-white antialiased">
+      <body className="font-inter bg-ink text-white antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <NextIntlClientProvider messages={messages}>
-          {children}
-          <WhatsAppButton />
+          <MotionProvider>
+            {children}
+            <WhatsAppButton />
+          </MotionProvider>
         </NextIntlClientProvider>
       </body>
     </html>

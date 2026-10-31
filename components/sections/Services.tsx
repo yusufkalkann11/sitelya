@@ -3,8 +3,11 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
+import SectionHeading from '../ui/SectionHeading';
+import BorderBeam from '../ui/BorderBeam';
+import { ArrowRight, Bolt, Check, Globe, Rocket, Sparkle } from '../ui/Icons';
 
-const ICONS = ['🚀', '⚡', '🛍️', '🏢'];
+const ICONS = [Rocket, Sparkle, Bolt, Globe];
 
 export default function Services() {
   const t = useTranslations('services');
@@ -15,82 +18,80 @@ export default function Services() {
   }>;
 
   return (
-    <section id="services" className="py-28 relative overflow-hidden" style={{ background: '#080d1a' }}>
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#2563EB]/10 to-transparent" />
-      </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
-        >
-          <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: '#60a5fa' }}>{t('title')}</p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-4 tracking-tight">{t('subtitle')}</h2>
-        </motion.div>
+    <section id="services" className="relative overflow-hidden bg-ink-900 py-24 sm:py-32">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px hairline-t" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-40 h-[30rem] w-[56rem] max-w-[120vw] -translate-x-1/2 rounded-full blur-3xl"
+        style={{ background: 'radial-gradient(closest-side, rgba(37,99,235,0.14), transparent)' }}
+      />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {items.map((item, i) => (
-            <motion.div
-              key={item.name}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className={`relative rounded-2xl p-6 flex flex-col cursor-default transition-shadow duration-300 ${
-                item.popular ? 'border-2 border-[#2563EB]' : 'border border-white/8 hover:border-[#2563EB]/40'
-              }`}
-              style={{
-                background: item.popular
-                  ? 'linear-gradient(135deg, #1d4ed8 0%, #2563EB 60%, #3b82f6 100%)'
-                  : 'rgba(255,255,255,0.03)',
-                boxShadow: item.popular ? '0 20px 60px rgba(37,99,235,0.35)' : undefined,
-              }}
-            >
-              {item.popular && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="px-3 py-1 bg-white text-[#2563EB] text-xs font-black rounded-full shadow-lg">{t('popular')}</span>
-                </div>
-              )}
+      <div className="container-site relative">
+        <SectionHeading eyebrow={t('title')} title={t('subtitle')} />
 
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5 ${item.popular ? 'bg-white/15' : 'bg-[#2563EB]/10'}`}>
-                {ICONS[i]}
-              </div>
-
-              <div className="mb-5">
-                <p className={`text-xs font-semibold uppercase tracking-wider mb-1 ${item.popular ? 'text-blue-200' : 'text-white/40'}`}>{item.name}</p>
-                <p className="text-4xl font-black text-white mb-2">{item.price}</p>
-                <p className={`text-sm leading-relaxed ${item.popular ? 'text-white/80' : 'text-white/45'}`}>{item.description}</p>
-              </div>
-
-              <ul className="space-y-2.5 flex-1 mb-6">
-                {item.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2.5 text-sm">
-                    <span className={`flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${item.popular ? 'bg-white/20' : 'bg-[#2563EB]/20'}`}>
-                      <svg className={`w-2.5 h-2.5 ${item.popular ? 'text-white' : 'text-[#60a5fa]'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </span>
-                    <span className={item.popular ? 'text-white/90' : 'text-white/65'}>{f}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Link
-                href={`/${locale}/iletisim?paket=${encodeURIComponent(item.name)}`}
-                className={`block text-center text-sm font-semibold py-3 px-4 rounded-xl transition-all duration-300 ${
+        <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4 xl:gap-5">
+          {items.map((item, i) => {
+            const Icon = ICONS[i] ?? Rocket;
+            return (
+              <motion.div
+                key={item.name}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -6, transition: { duration: 0.25 } }}
+                className={`group relative flex flex-col rounded-2xl p-6 transition-colors duration-300 ${
                   item.popular
-                    ? 'bg-white text-[#2563EB] hover:bg-blue-50'
-                    : 'bg-[#2563EB]/10 text-white border border-[#2563EB]/25 hover:bg-[#2563EB] hover:border-[#2563EB] hover:shadow-lg hover:shadow-blue-500/30'
+                    ? 'border border-brand/50 bg-gradient-to-b from-brand/[0.18] via-[#0d1730] to-[#0b1222] shadow-[0_30px_80px_-30px_rgba(37,99,235,0.7)] lg:-my-3 lg:py-9'
+                    : 'card hover:border-white/15 hover:bg-white/[0.04]'
                 }`}
               >
-                {t('getStarted')} →
-              </Link>
-            </motion.div>
-          ))}
+                {item.popular && (
+                  <>
+                    <BorderBeam size={140} duration={7} />
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gradient-to-r from-brand to-brand-light px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white shadow-lg shadow-brand/40">
+                      {t('popular')}
+                    </span>
+                  </>
+                )}
+
+                <div className="flex items-center justify-between">
+                  <span className={`flex h-10 w-10 items-center justify-center rounded-xl border ${
+                    item.popular ? 'border-brand-light/40 bg-brand/25 text-white' : 'border-white/10 bg-white/[0.04] text-brand-light'
+                  }`}>
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">{item.name}</span>
+                </div>
+
+                <p className="mt-7 font-display text-5xl font-extrabold tracking-tight text-white">{item.price}</p>
+                <p className="mt-3 min-h-[2.5rem] text-sm leading-relaxed text-slate-400">{item.description}</p>
+
+                <div className="my-6 h-px bg-gradient-to-r from-white/10 via-white/[0.06] to-transparent" />
+
+                <ul className="flex-1 space-y-3">
+                  {item.features.map((f) => (
+                    <li key={f} className="flex items-start gap-3 text-sm">
+                      <span className={`mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full ${
+                        item.popular ? 'bg-brand text-white' : 'bg-brand/15 text-brand-light'
+                      }`}>
+                        <Check className="h-3 w-3" />
+                      </span>
+                      <span className="text-slate-300">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  href={`/${locale}/iletisim?paket=${encodeURIComponent(item.name)}`}
+                  className={`mt-8 w-full ${item.popular ? 'btn-primary' : 'btn-secondary group-hover:border-brand/50 group-hover:bg-brand/15'}`}
+                >
+                  {t('getStarted')}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -4,7 +4,10 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
-import { WHATSAPP_URL } from '@/lib/site';
+import { EMAIL, INSTAGRAM_URL, WHATSAPP_URL } from '@/lib/site';
+import SectionHeading from '../ui/SectionHeading';
+import BorderBeam from '../ui/BorderBeam';
+import { ArrowRight, Instagram, Mail, WhatsAppGlyph } from '../ui/Icons';
 
 export default function Contact({ defaultPackage = '' }: { defaultPackage?: string }) {
   const t      = useTranslations('contact');
@@ -19,6 +22,13 @@ export default function Contact({ defaultPackage = '' }: { defaultPackage?: stri
     message: '',
   });
   const [gotcha, setGotcha] = useState('');
+
+  const nextSteps = t.raw('next') as string[];
+  const channels = [
+    { href: WHATSAPP_URL, label: 'WhatsApp', value: '+90 507 590 99 15', Icon: WhatsAppGlyph, external: true },
+    { href: `mailto:${EMAIL}`, label: t('email'), value: EMAIL, Icon: Mail, external: false },
+    { href: INSTAGRAM_URL, label: 'Instagram', value: '@sitelyaweb', Icon: Instagram, external: true },
+  ];
 
   const privacyHref = locale === 'tr' ? `/${locale}/gizlilik` : `/${locale}/privacy`;
 
@@ -43,159 +53,203 @@ export default function Contact({ defaultPackage = '' }: { defaultPackage?: stri
   };
 
   const inputClass =
-    'w-full px-4 py-3 rounded-xl text-white placeholder-white/25 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/60 transition-all duration-200 border border-[#1e293b]';
+    'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-slate-500 transition-all duration-200 hover:border-white/20 focus:border-brand-light/60 focus:bg-white/[0.06] focus:outline-none focus:ring-4 focus:ring-brand/20';
+  const labelClass = 'mb-2 block text-xs font-semibold uppercase tracking-[0.12em] text-slate-400';
 
   return (
-    <section id="contact" className="py-28 relative overflow-hidden" style={{ background: '#080d1a' }}>
+    <section id="contact" className="relative overflow-hidden bg-ink-900 py-24 sm:py-32">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px hairline-t" />
       <div
-        className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none"
-        style={{ background: 'radial-gradient(circle at top right, rgba(37,99,235,0.08) 0%, transparent 65%)' }}
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-40 top-20 h-[36rem] w-[36rem] rounded-full blur-3xl"
+        style={{ background: 'radial-gradient(closest-side, rgba(37,99,235,0.16), transparent)' }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: '#60a5fa' }}>
-            {t('title')}
-          </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-4 tracking-tight">
-            {t('headline')}
-          </h2>
-          <p className="text-white/50 text-base max-w-md mx-auto">{t('subtext')}</p>
-        </motion.div>
+      <div className="container-site relative">
+        <SectionHeading eyebrow={t('title')} title={t('headline')} text={t('subtext')} />
 
-        {/* Centered form */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="max-w-[600px] mx-auto"
-        >
-          <div className="rounded-2xl p-6 sm:p-10"style={{ background: '#0f172a', border: '1px solid #1e293b' }}>
-            {status === 'sent' ? (
-              <div className="text-center py-12">
-                <div className="w-16 h-16 rounded-full bg-green-500/15 border border-green-500/30 flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <p className="text-white font-semibold text-lg">{t('success')}</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <input type="text" name="_gotcha" value={gotcha} onChange={(e) => setGotcha(e.target.value)}
-                  style={{ display: 'none' }} tabIndex={-1} autoComplete="off" aria-hidden="true" />
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-xs font-semibold text-white/40 mb-1.5 uppercase tracking-wide">{t('name')}</label>
-                    <input
-                      type="text" required placeholder={t('namePlaceholder')} value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className={inputClass} style={{ background: '#1e293b' }}
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-semibold text-white/40 mb-1.5 uppercase tracking-wide">{t('email')}</label>
-                    <input
-                      type="email" required placeholder={t('emailPlaceholder')} value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className={inputClass} style={{ background: '#1e293b' }}
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-xs font-semibold text-white/40 mb-1.5 uppercase tracking-wide">{t('phone')}</label>
-                    <input
-                      type="tel" placeholder={t('phonePlaceholder')} value={form.phone}
-                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className={inputClass} style={{ background: '#1e293b' }}
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-semibold text-white/40 mb-1.5 uppercase tracking-wide">{t('package')}</label>
-                    <select
-                      value={form.package}
-                      onChange={(e) => setForm({ ...form, package: e.target.value })}
-                      className={`${inputClass} appearance-none cursor-pointer`} style={{ background: '#1e293b' }}
+        <div className="mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
+          {/* ── Side info ─────────────────────────────────────── */}
+          <motion.aside
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="order-2 space-y-6 lg:order-1 lg:col-span-5"
+          >
+            <div className="card p-6">
+              <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">{t('channelsTitle')}</h3>
+              <ul className="mt-4 space-y-2">
+                {channels.map(({ href, label, value, Icon, external }) => (
+                  <li key={href}>
+                    <a
+                      href={href}
+                      target={external ? '_blank' : undefined}
+                      rel={external ? 'noopener noreferrer' : undefined}
+                      className="group flex items-center gap-4 rounded-xl border border-transparent p-2.5 transition-colors hover:border-white/10 hover:bg-white/[0.04]"
                     >
-                      <option value="">{t('packageUndecided')}</option>
-                      {packages.map((p) => (
-                        <option key={p.name} value={p.name}>{p.name} ({p.price})</option>
-                      ))}
-                    </select>
+                      <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-brand-light transition-colors group-hover:border-brand/50">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block text-xs text-slate-500">{label}</span>
+                        <span className="block truncate text-sm font-medium text-white" translate="no">{value}</span>
+                      </span>
+                      <ArrowRight className="h-4 w-4 flex-shrink-0 text-slate-600 transition-all group-hover:translate-x-0.5 group-hover:text-slate-300" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="card p-6">
+              <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">{t('nextTitle')}</h3>
+              <ol className="mt-5 space-y-5">
+                {nextSteps.map((step, i) => (
+                  <li key={step} className="flex gap-4">
+                    <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-brand/40 bg-brand/15 font-display text-xs font-bold text-brand-light">
+                      {i + 1}
+                    </span>
+                    <p className="pt-0.5 text-sm leading-relaxed text-slate-300">{step}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </motion.aside>
+
+          {/* ── Form ──────────────────────────────────────────── */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="order-1 lg:order-2 lg:col-span-7"
+          >
+            <div className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-[#0e1730] to-[#0a1122] p-5 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.8)] sm:p-9">
+              <BorderBeam size={160} duration={12} />
+              {status === 'sent' ? (
+                <div className="py-16 text-center">
+                  <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-400/10">
+                    <svg className="h-8 w-8 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
+                  <p className="text-lg font-semibold text-white" role="status">{t('success')}</p>
                 </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-white/40 mb-1.5 uppercase tracking-wide">{t('message')}</label>
-                  <textarea
-                    required rows={5} placeholder={t('messagePlaceholder')} value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className={`${inputClass} resize-none`} style={{ background: '#1e293b' }}
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={status === 'sending' || !kvkk}
-                  className="w-full py-4 text-white font-semibold rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-blue-500/30 disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none text-sm"
-                  style={{ background: 'linear-gradient(135deg, #2563EB 0%, #3b82f6 100%)' }}
-                >
-                  {status === 'sending' ? t('sending') : `${t('send')} →`}
-                </button>
-
-                {status === 'error' && (
-                  <p className="text-sm text-red-400 text-center">{t('error')}</p>
-                )}
-
-                <label className="flex items-start gap-3 cursor-pointer group">
-                  <div className="relative mt-0.5 flex-shrink-0">
-                    <input type="checkbox" required checked={kvkk} onChange={(e) => setKvkk(e.target.checked)} className="sr-only" />
-                    <div className={`w-4 h-4 rounded border transition-all duration-200 ${kvkk ? 'bg-[#2563EB] border-[#2563EB]' : 'bg-white/5 border-white/20 group-hover:border-white/40'} flex items-center justify-center`}>
-                      {kvkk && (
-                        <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      )}
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <input type="text" name="_gotcha" value={gotcha} onChange={(e) => setGotcha(e.target.value)}
+                    style={{ display: 'none' }} tabIndex={-1} autoComplete="off" aria-hidden="true" />
+                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    <div>
+                      <label htmlFor="cf-name" className={labelClass}>{t('name')}</label>
+                      <input
+                        id="cf-name" type="text" required autoComplete="name" placeholder={t('namePlaceholder')} value={form.name}
+                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                        className={inputClass}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="cf-email" className={labelClass}>{t('email')}</label>
+                      <input
+                        id="cf-email" type="email" required autoComplete="email" placeholder={t('emailPlaceholder')} value={form.email}
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                        className={inputClass}
+                      />
                     </div>
                   </div>
-                  <span className="text-xs text-white/35 leading-relaxed">
-                    {t('kvkkPrefix')}{' '}
-                    <Link href={privacyHref} target="_blank" rel="noopener noreferrer"
-                      className="text-[#60a5fa] hover:text-white underline underline-offset-2 transition-colors">
-                      {t('kvkkLink')}
-                    </Link>
-                    {t('kvkkSuffix')}
-                  </span>
-                </label>
-              </form>
-            )}
 
-            <div className="flex items-center gap-3 my-6">
-              <span className="flex-1 h-px bg-white/10" />
-              <span className="text-xs text-white/30 uppercase tracking-wider">{t('or')}</span>
-              <span className="flex-1 h-px bg-white/10" />
+                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    <div>
+                      <label htmlFor="cf-phone" className={labelClass}>{t('phone')}</label>
+                      <input
+                        id="cf-phone" type="tel" autoComplete="tel" placeholder={t('phonePlaceholder')} value={form.phone}
+                        onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                        className={inputClass}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="cf-package" className={labelClass}>{t('package')}</label>
+                      <div className="relative">
+                        <select
+                          id="cf-package"
+                          value={form.package}
+                          onChange={(e) => setForm({ ...form, package: e.target.value })}
+                          className={`${inputClass} cursor-pointer appearance-none pr-10 [&>option]:bg-[#0b1222]`}
+                        >
+                          <option value="">{t('packageUndecided')}</option>
+                          {packages.map((p) => (
+                            <option key={p.name} value={p.name}>{p.name} ({p.price})</option>
+                          ))}
+                        </select>
+                        <svg className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="cf-message" className={labelClass}>{t('message')}</label>
+                    <textarea
+                      id="cf-message" required rows={5} placeholder={t('messagePlaceholder')} value={form.message}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      className={`${inputClass} resize-none`}
+                    />
+                  </div>
+
+                  <label className="group flex cursor-pointer items-start gap-3">
+                    <div className="relative mt-0.5 flex-shrink-0">
+                      <input type="checkbox" required checked={kvkk} onChange={(e) => setKvkk(e.target.checked)} className="peer sr-only" />
+                      <div className={`flex h-5 w-5 items-center justify-center rounded-md border transition-all duration-200 peer-focus-visible:ring-2 peer-focus-visible:ring-brand-light ${kvkk ? 'border-brand bg-brand' : 'border-white/20 bg-white/5 group-hover:border-white/40'}`}>
+                        {kvkk && (
+                          <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        )}
+                      </div>
+                    </div>
+                    <span className="text-xs leading-relaxed text-slate-400">
+                      {t('kvkkPrefix')}{' '}
+                      <Link href={privacyHref} target="_blank" rel="noopener noreferrer"
+                        className="text-brand-light underline underline-offset-2 transition-colors hover:text-white">
+                        {t('kvkkLink')}
+                      </Link>
+                      {t('kvkkSuffix')}
+                    </span>
+                  </label>
+
+                  <button
+                    type="submit"
+                    disabled={status === 'sending' || !kvkk}
+                    className="btn-primary w-full !py-4 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0"
+                  >
+                    {status === 'sending' ? t('sending') : <>{t('send')} <ArrowRight className="h-4 w-4" /></>}
+                  </button>
+
+                  {status === 'error' && (
+                    <p className="text-center text-sm text-red-400" role="alert">{t('error')}</p>
+                  )}
+                </form>
+              )}
+
+              <div className="my-6 flex items-center gap-3">
+                <span className="h-px flex-1 bg-white/10" />
+                <span className="text-xs uppercase tracking-wider text-slate-500">{t('or')}</span>
+                <span className="h-px flex-1 bg-white/10" />
+              </div>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#25D366]/40 bg-[#25D366]/10 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:border-[#25D366]/70 hover:bg-[#25D366]/20"
+              >
+                <WhatsAppGlyph className="h-4 w-4 text-[#25D366]" />
+                {t('whatsappDirect')}
+              </a>
             </div>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-sm font-semibold text-white border border-[#25D366]/40 bg-[#25D366]/10 hover:bg-[#25D366]/20 hover:border-[#25D366]/70 transition-all duration-300"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#25D366]" />
-              {t('whatsappDirect')}
-            </a>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
