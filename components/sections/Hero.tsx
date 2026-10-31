@@ -91,7 +91,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-5xl sm:text-6xl lg:text-8xl font-black leading-[1.05] tracking-tight mb-6 text-white"
+          className="text-[2.5rem] min-[400px]:text-5xl sm:text-6xl lg:text-8xl font-black leading-[1.05] tracking-tight mb-6 text-white"
         >
           {t('headline').split(' ').slice(0, -2).join(' ')}{' '}
           <span style={{
